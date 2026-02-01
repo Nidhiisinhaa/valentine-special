@@ -14,11 +14,15 @@ const [noPosition, setNoPosition] = useState({ top: 80, left: 220 });
 const [isCut, setIsCut] = useState(false);
 
 const launchConfetti = () => {
-    confetti({
-      particleCount: 200,
-      spread: 80,
-      origin: { y: 0.6 }
-    });
+   confetti({
+  particleCount: 300,
+  spread: 120,
+  startVelocity: 45,
+  scalar: 1.2,
+  zIndex: 2000,
+  origin: { y: 0.6 }
+});
+
   };
 
   return (
@@ -116,7 +120,7 @@ No matter where life takes us, I promise to choose you, support you, and stand b
             <p>Your forever 💖</p>
           </div>
 
-          <hr style={{ margin: "30px 0", opacity: 0.2 }} />
+          <hr style={{ margin: "5px 0", opacity: 0.2 }} />
 
 <p style={{ textAlign: "center", marginBottom: "10px" }}>
   Before I end this… I need to ask you something 💖
@@ -171,8 +175,9 @@ No matter where life takes us, I promise to choose you, support you, and stand b
               }}
               onMouseEnter={() => {
                 setNoPosition({
-                  top: Math.random() * 120,
-                  left: Math.random() * 250
+                  top: Math.random() * (window.innerHeight / 4),
+left: Math.random() * (window.innerWidth / 4)
+
                 });
 
                 setYesScale(prev => Math.min(prev + 0.1, 2));
